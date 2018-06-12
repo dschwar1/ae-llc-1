@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Extra:</strong>
+  <%= @scope.extra %>
+</p>
+
+<p>
+  <strong>Estimated hours:</strong>
+  <%= @scope.estimated_hours %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @scope.value %>
+</p>
+
+<p>
+  <strong>Estimated gc due date:</strong>
+  <%= @scope.estimated_gc_due_date %>
+</p>
+
+<p>
+  <strong>Actual gc due date:</strong>
+  <%= @scope.actual_gc_due_date %>
+</p>
+
+<%= link_to 'Edit', edit_scope_path(@scope) %> |
+<%= link_to 'Back', scopes_path %>
