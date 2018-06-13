@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   resources :scopes
   resources :employees
   resources :jobs
+  
+  #Static page routes
+  get 'home' => 'home#home', as: :home
+  
+  #Root url
+  root :to => 'home#home'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

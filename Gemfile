@@ -29,6 +29,10 @@ gem 'factory_bot_rails'
 # Makes rails console output easier to read
 gem 'hirb'
 
+# Add foundation for quick css
+gem 'foundation-rails'
+gem 'autoprefixer-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

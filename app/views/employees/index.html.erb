@@ -8,7 +8,7 @@
       <th>First name</th>
       <th>Last name</th>
       <th>Phone</th>
-      <th>Employee</th>
+      <th>Employee Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
         <td><%= employee.first_name %></td>
         <td><%= employee.last_name %></td>
         <td><%= employee.phone %></td>
-        <td><%= employee.employee_id %></td>
+        <td><%= employee.employee_number %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
