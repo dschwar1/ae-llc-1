@@ -19,6 +19,10 @@
   <strong>Employee Number:</strong>
   <%= @employee.employee_number %>
 </p>
+<p>
+  <strong>Department:</strong>
+  <%= @employee.department.name %>
+</p>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>

@@ -9,6 +9,7 @@ FactoryBot.define do
     end
     
     factory :scope do
+        description "Install stairs"
         extra true
         estimated_hours 120
         value 3500
@@ -29,6 +30,7 @@ FactoryBot.define do
         last_name "Doe"
         phone 4121231234
         employee_number 7
+        association :department
     end
     
     factory :department do

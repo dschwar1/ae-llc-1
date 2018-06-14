@@ -1441,3 +1441,14 @@ $include-html-global-classes: $include-html-classes;
 // $include-accessibility-classes: true;
 
 @import 'foundation';
+
+#main_content {
+  margin-top: 10px;
+  //left: 30%;
+  //margin-right: -50%;
+}
+
+form {
+    //float: left;
+    //margin-left: 90px;
+}

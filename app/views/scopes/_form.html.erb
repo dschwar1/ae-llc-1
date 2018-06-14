@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
     <%= f.label :extra %><br>
     <%= f.check_box :extra %>
   </div>
@@ -25,11 +29,19 @@
   </div>
   <div class="field">
     <%= f.label :estimated_gc_due_date %><br>
-    <%= f.datetime_select :estimated_gc_due_date %>
+    <%= f.date_select :estimated_gc_due_date %>
   </div>
   <div class="field">
     <%= f.label :actual_gc_due_date %><br>
-    <%= f.datetime_select :actual_gc_due_date %>
+    <%= f.date_select :actual_gc_due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :department_id %><br>
+    <%= f.collection_select :department_id, Department.all, :id, :name, Prompt: "Select Department" %>
+  </div>
+  <div class="field">
+    <%= f.label :job_id %><br>
+    <%= f.collection_select :job_id, Job.all, :id, :name, Prompt: "Select Job" %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180605053219) do
   end
 
   create_table "scopes", force: :cascade do |t|
+    t.string   "description"
     t.boolean  "extra"
     t.integer  "estimated_hours"
     t.float    "value"

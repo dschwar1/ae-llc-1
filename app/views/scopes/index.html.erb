@@ -5,11 +5,14 @@
 <table>
   <thead>
     <tr>
+      <th>Description</th>
       <th>Extra</th>
       <th>Estimated hours</th>
       <th>Value</th>
       <th>Estimated gc due date</th>
       <th>Actual gc due date</th>
+      <th>Department</th>
+      <th>Job</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +20,14 @@
   <tbody>
     <% @scopes.each do |scope| %>
       <tr>
+        <td><%= scope.description %></td>
         <td><%= scope.extra %></td>
         <td><%= scope.estimated_hours %></td>
         <td><%= scope.value %></td>
-        <td><%= scope.estimated_gc_due_date %></td>
-        <td><%= scope.actual_gc_due_date %></td>
+        <td><%= scope.estimated_gc_due_date.to_date %></td>
+        <td><%= scope.actual_gc_due_date.to_date %></td>
+        <td><%= scope.department.name %></td>
+        <td><%= scope.job.name %></td>
         <td><%= link_to 'Show', scope %></td>
         <td><%= link_to 'Edit', edit_scope_path(scope) %></td>
         <td><%= link_to 'Destroy', scope, method: :delete, data: { confirm: 'Are you sure?' } %></td>

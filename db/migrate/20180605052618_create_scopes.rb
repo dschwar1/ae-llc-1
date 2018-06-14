@@ -1,6 +1,7 @@
 class CreateScopes < ActiveRecord::Migration
   def change
     create_table :scopes do |t|
+      t.string :description
       t.boolean :extra
       t.integer :estimated_hours
       t.float :value
