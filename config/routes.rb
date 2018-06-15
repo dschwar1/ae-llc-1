@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :scopes
   resources :employees
   resources :jobs
+  resources :scope_times
   
   #Static page routes
   get 'home' => 'home#home', as: :home

@@ -1,0 +1,33 @@
+<div id="scope_times">
+    <% unless @scope_times.nil? || @scope_times.empty? %>
+    <div class="panel clearfix">
+        <h3>Past Scope Work</h3><!--
+        <ul>
+            &nbsp;&nbsp;&nbsp;&nbsp;Week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hours &nbsp;&nbsp; % Complete<br>
+            <%# @scope_times.each do |time| %>
+                <%#= time.week.to_date %>&nbsp;&nbsp;&nbsp;
+                <%#= time.hours %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <%#= time.completion_rate %>%<br>
+            <%# end %>
+        </ul> %>-->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th width="300">Week</th>
+                    <th width="100">Hours</th>
+                    <th width="100">%&nbsp;Complete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @scope_times.each do |time| %>
+                    <tr>
+                        <td><%= time.week.to_date %></td>
+                        <td><%= time.hours %></td>
+                        <td><%= time.completion_rate %>%</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <% end %>
+</div>

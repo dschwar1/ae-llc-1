@@ -10,6 +10,7 @@ class ScopesController < ApplicationController
   # GET /scopes/1
   # GET /scopes/1.json
   def show
+    @scope_times = @scope.scope_times
   end
 
   # GET /scopes/new
