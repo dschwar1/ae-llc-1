@@ -1,0 +1,7 @@
+<!--$('#new_scope_time').remove();-->
+<!--$('#new_scope_time_link').show();-->
+<!--$('#times_list').replaceWith('<%# j render("scope_times/times_list") %>');-->
+
+$('#new_scope_time').remove();
+$('#times_list').replaceWith("<%= j render 'scope_times/times_list'%>");
+$('#new_scope_time_link').html("<%= j render 'new_scope_time_link'%>");

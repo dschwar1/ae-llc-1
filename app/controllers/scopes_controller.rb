@@ -28,9 +28,11 @@ class ScopesController < ApplicationController
     @scope = Scope.new(scope_params)
 
     respond_to do |format|
+      @scopes = Scope.all #for creating scopes on index page through ajax
       if @scope.save
         format.html { redirect_to @scope, notice: 'Scope was successfully created.' }
         format.json { render :show, status: :created, location: @scope }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @scope.errors, status: :unprocessable_entity }

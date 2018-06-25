@@ -33,6 +33,12 @@ gem 'hirb'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 
+# Simple Form for simple forms
+gem 'simple_form'
+
+# Will Paginate for pagination
+gem 'will_paginate'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
