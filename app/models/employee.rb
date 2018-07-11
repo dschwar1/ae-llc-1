@@ -4,4 +4,9 @@ class Employee < ActiveRecord::Base
     has_many :jobs, through: :work_days
     belongs_to :department
     
+    #methods
+    def name
+        return self.first_name + " " + self.last_name
+    end
+    
 end

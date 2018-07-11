@@ -1,0 +1,19 @@
+<% @jobs.each do |job| %>
+    <tr>
+        <%# job = @jobs.first %>
+        <td><%= job.job_number %></td>
+        <td><%= job.name %></td>
+        <% (0..5).each do |day| %>
+            <% this_day = WorkDay.for_day(@wbeg + day).for_job(job) %>
+            <% if this_day.empty? %>
+                <td>Nobody worked this day</td>
+            <% else %>
+                <td>
+                <% this_day.each do |wday| %>
+                    <%= wday.employee.name %>,
+                <% end %>
+                </td>
+            <% end %>
+        <% end %>
+    </tr>
+<% end %>

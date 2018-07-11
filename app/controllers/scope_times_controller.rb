@@ -1,5 +1,5 @@
 class ScopeTimesController < ApplicationController
-    before_action :set_scope, only: [:destroy]
+    before_action :set_scope_time, only: [:destroy]
     
     def index
         @scope_times = ScopeTime.all
@@ -20,6 +20,7 @@ class ScopeTimesController < ApplicationController
                 format.js
             else
                 format.html { redirect_to scopes_path(@scope_time.scope), notice: 'Scope time was not created, error occurred.' }
+                format.js
             end
         end
     end
