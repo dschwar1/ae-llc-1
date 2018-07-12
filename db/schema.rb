@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20180605053219) do
 
   create_table "scope_times", force: :cascade do |t|
     t.datetime "week"
-    t.integer  "hours"
     t.integer  "completion_rate"
     t.integer  "scope_id"
     t.datetime "created_at",      null: false
@@ -52,6 +51,7 @@ ActiveRecord::Schema.define(version: 20180605053219) do
     t.string   "description"
     t.boolean  "extra"
     t.integer  "estimated_hours"
+    t.integer  "hours"
     t.float    "value"
     t.datetime "estimated_gc_due_date"
     t.datetime "actual_gc_due_date"

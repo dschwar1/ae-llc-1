@@ -9,7 +9,7 @@ module Contexts
         @employee1 = FactoryBot.create(:employee, department: @department1)
         @employee2 = FactoryBot.create(:employee, department: @department2, first_name: "Jane", last_name: "Doe", phone: "4124124112", employee_number: "2")
         @scope_time1 = FactoryBot.create(:scope_time, scope: @scope1)
-        @scope_time2 = FactoryBot.create(:scope_time, scope: @scope1, week: 1.week.ago.to_date-1.week.ago.to_date.wday, hours: 40, completion_rate: 30)
+        @scope_time2 = FactoryBot.create(:scope_time, scope: @scope1, week: 1.week.ago.to_date-1.week.ago.to_date.wday, completion_rate: 30)
         @work_day1 = FactoryBot.create(:work_day, job: @job1, employee: @employee1)
         @work_day2 = FactoryBot.create(:work_day, job: @job1, employee: @employee1, day: Date.today)
     end

@@ -2,10 +2,10 @@
 
 one:
   week: 2018-06-05 05:32:19
-  hours: 1
+  #hours: 1
   completion_rate: 1
 
 two:
   week: 2018-06-05 05:32:19
-  hours: 1
+  #hours: 1
   completion_rate: 1

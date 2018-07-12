@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :employees
   resources :jobs
   resources :scope_times
+  resources :work_days
   
   #Static page routes
   get 'home' => 'home#home', as: :home

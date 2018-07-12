@@ -14,7 +14,7 @@
             <thead>
                 <tr>
                     <th width="300">Week</th>
-                    <th width="100">Hours</th>
+                    <!--<th width="100">Hours</th>-->
                     <th width="100">%&nbsp;Complete</th>
                 </tr>
             </thead>
@@ -22,7 +22,7 @@
                 <% @scope_times.each do |time| %>
                     <tr>
                         <td><%= time.week.to_date %></td>
-                        <td><%= time.hours %></td>
+                        <!--<td><%#= time.hours %></td>-->
                         <td><%= time.completion_rate %>%</td>
                     </tr>
                 <% end %>

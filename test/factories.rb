@@ -12,6 +12,7 @@ FactoryBot.define do
         description "Install stairs"
         extra true
         estimated_hours 120
+        hours 80
         value 3500
         estimated_gc_due_date 1.week.ago.to_date
         actual_gc_due_date 5.days.ago.to_date
@@ -39,7 +40,7 @@ FactoryBot.define do
     
     factory :scope_time do
         week Date.today-Date.today.wday
-        hours 80
+        #hours 80
         completion_rate 80
         association :scope
     end

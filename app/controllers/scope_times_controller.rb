@@ -39,6 +39,6 @@ class ScopeTimesController < ApplicationController
         end
     
         def scope_time_params
-            params.require(:scope_time).permit(:scope_id, :week, :hours, :completion_rate)
+            params.require(:scope_time).permit(:scope_id, :week, :completion_rate)
         end
 end

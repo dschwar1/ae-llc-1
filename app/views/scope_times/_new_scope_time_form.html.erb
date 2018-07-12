@@ -1,6 +1,6 @@
 <%= simple_form_for @scope_time, html: { :class => 'form-horizontal' }, remote: true do |f| %>
     <%= f.input :completion_rate, label: "% Completed", input_html: { :class => "avg"} %>
-    <%= f.input :hours, label: "Hours", input_html: { :class => "avg"} %>
+    <%#= f.input :hours, label: "Hours", input_html: { :class => "avg"} %>
     <%= f.input :week, as: :date, label: "Week", input_html: { :class => "avg"} %>
     <%= f.association :scope, collection: Scope.all,:label_method => lambda { |scope| "#{scope.job.name} | #{scope.description}" }, label: "Scope", input_html: { :class => "avg"} %>
     <p>&nbsp</p>

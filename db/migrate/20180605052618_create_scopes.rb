@@ -4,6 +4,7 @@ class CreateScopes < ActiveRecord::Migration
       t.string :description
       t.boolean :extra
       t.integer :estimated_hours
+      t.integer :hours
       t.float :value
       t.datetime :estimated_gc_due_date
       t.datetime :actual_gc_due_date
