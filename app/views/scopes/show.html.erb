@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="small-7 columns">
+    <%= render :partial => "scope_details" %>
+  </div>
+  <div class="small-5 columns">
+    <%= render :partial => "scope_times" %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_scope_path(@scope) %> |
+<%= link_to 'Back', scopes_path %>

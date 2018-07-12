@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  extra: false
+  estimated_hours: 1
+  hours: 1
+  value: 1.5
+  estimated_gc_due_date: 2018-06-05 05:26:19
+  actual_gc_due_date: 2018-06-05 05:26:19
+
+two:
+  extra: false
+  estimated_hours: 1
+  hours: 1
+  value: 1.5
+  estimated_gc_due_date: 2018-06-05 05:26:19
+  actual_gc_due_date: 2018-06-05 05:26:19

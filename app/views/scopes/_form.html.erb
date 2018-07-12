@@ -1,0 +1,53 @@
+<%= form_for(@scope) do |f| %>
+  <% if @scope.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scope.errors.count, "error") %> prohibited this scope from being saved:</h2>
+
+      <ul>
+      <% @scope.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :extra %><br>
+    <%= f.check_box :extra %>
+  </div>
+  <div class="field">
+    <%= f.label :estimated_hours %><br>
+    <%= f.number_field :estimated_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :hours %><br>
+    <%= f.number_field :hours %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :estimated_gc_due_date %><br>
+    <%= f.date_select :estimated_gc_due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :actual_gc_due_date %><br>
+    <%= f.date_select :actual_gc_due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :department_id %><br>
+    <%= f.collection_select :department_id, Department.all, :id, :name, Prompt: "Select Department" %>
+  </div>
+  <div class="field">
+    <%= f.label :job_id %><br>
+    <%= f.collection_select :job_id, Job.all, :id, :name, Prompt: "Select Job" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

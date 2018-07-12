@@ -1,0 +1,16 @@
+<%= simple_form_for @scope, html: { :class => 'form-horizontal' }, remote: true do |f| %>
+    <%= f.input :description, label: "Description", input_html: { :class => "avg"} %>
+    <%= f.input :extra, label: "Extra", input_html: { :class => "avg"} %>
+    <%= f.input :estimated_hours, label: "Estimated Hours", input_html: { :class => "avg"} %>
+    <%= f.input :hours, label: "Actual Hours", input_html: { :class => "avg"} %>
+    <%= f.input :value, label: "Value", input_html: { :class => "avg"} %>
+    <%= f.input :estimated_gc_due_date, as: :date, label: "Estimated GC Due Date", input_html: { :class => "avg"} %>
+    <%= f.input :actual_gc_due_date, as: :date, required: false, label: "Actual GC Due Date", input_html: { :class => "avg"} %>
+    <%= f.input :department_id, collection: Department.all, label: "Department", input_html: { :class => "avg"} %>
+    <%= f.input :job_id, collection: Job.all, label: "Job", input_html: { :class => "avg"} %>
+    <p>&nbsp</p>
+    <div class="form_actions">
+        <%= f.submit nil, class: 'button tiny radius' %>
+        <%= link_to 'Cancel', scopes_path, class: 'button tiny radius alert' %>
+    </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Scope Times</h1>
+
+<table id = "times_list">
+    <%= render "scope_times/times_list" %>
+</table>
+
+<br>
+
+<div id="new_scope_time_link">
+  <%= render 'new_scope_time_link'%>
+</div>
+
+<%# link_to(new_scope_time_path, id: 'new_scope_time_link', class: 'button tiny radius', remote: true) do %>
+  <!--Add New Scope Time Now-->
+<%# end %>
+
+<br>

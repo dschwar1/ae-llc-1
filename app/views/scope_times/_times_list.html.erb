@@ -1,0 +1,22 @@
+<thead>
+  <tr>
+    <th>Job</th>
+    <th>Scope</th>
+    <th>Week</th>
+    <!--<th>Hours</th>-->
+    <th>Completion Rate</th>
+    <th colspan="1"></th>
+  </tr>
+</thead>
+<tbody>
+  <% @scope_times.each do |time| %>
+    <tr>
+      <td><%= time.scope.job.name %></td>
+      <td><%= time.scope.description %></td>
+      <td><%= time.week.to_date %></td>
+      <!--<td><%#= time.hours %></td>-->
+      <td><%= time.completion_rate %>%</td>
+      <td><%= link_to 'Destroy', time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>

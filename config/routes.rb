@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  resources :departments
+  resources :scopes
+  resources :employees
+  resources :jobs
+  resources :scope_times
+  resources :work_days
+  
+  #Static page routes
+  get 'home' => 'home#home', as: :home
+  get 'scheduling' => 'home#scheduling', as: :scheduling
+  
+  #Scheduling page actions
+  get 'week_before' => 'home#week_before', as: :week_before
+  get 'week_after' => 'home#week_after', as: :week_after
+  
+  #Root url
+  root :to => 'home#home'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

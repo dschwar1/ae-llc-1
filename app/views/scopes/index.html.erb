@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Scopes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Extra</th>
+      <th>Estimated hours</th>
+      <th>Actual hours</th>
+      <th>Value</th>
+      <th>Estimated gc due date</th>
+      <th>Actual gc due date</th>
+      <th>Department</th>
+      <th>Job</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody id="scopes_list">
+    <%= render "scopes/scopes_list" %>
+  </tbody>
+</table>
+
+<br>
+
+<div id="new_scope_link">
+  <%= render 'new_scope_link'%>
+</div>
+
+<%# link_to(new_scope_path, id: 'new_scope_link', class: 'button tiny radius', remote: true) do %>
+  <!--Add New Scope Now-->
+<%# end %>
+
+<br>
+
+<%= link_to 'New Scope Form', new_scope_path %>
+
+<br>

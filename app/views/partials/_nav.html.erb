@@ -1,0 +1,21 @@
+<!-- code inspired from CMU 67-272 code by Prof H -->
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation">
+        <section class="top-bar-section">
+            <ul class="left">
+                <li><%= link_to image_tag('logo_white.png', size:"40x40"), home_path %></li>
+                <li><%= link_to "Scheduling", scheduling_path %></li>
+                <li class="has-dropdown">
+                    <%= link_to "System", jobs_path %>
+                    <ul class="dropdown">
+                        <li><%= link_to "Jobs", jobs_path %></li>
+                        <li><%= link_to "Scopes", scopes_path %></li>
+                        <li><%= link_to "Departments", departments_path %></li>
+                        <li><%= link_to "Employees", employees_path %></li>
+                        <li><%= link_to "Scope Times", scope_times_path %></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>

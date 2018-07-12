@@ -4,9 +4,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+#for heroku
+gem "pg", "~> 0.18"
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass','~> 3.4.9'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -22,6 +25,22 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Record builder for quick testing
+gem 'factory_bot_rails'
+
+# Makes rails console output easier to read
+gem 'hirb'
+
+# Add foundation for quick css
+gem 'foundation-rails', '~> 5.4.5'
+gem 'autoprefixer-rails'
+
+# Simple Form for simple forms
+gem 'simple_form'
+
+# Will Paginate for pagination
+gem 'will_paginate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
