@@ -39,6 +39,9 @@ gem 'simple_form'
 # Will Paginate for pagination
 gem 'will_paginate'
 
+#for heroku
+gem 'pg'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
