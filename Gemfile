@@ -4,9 +4,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+#for heroku
+gem "pg", "~> 0.18"
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass','~> 3.4.9'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -30,7 +33,7 @@ gem 'factory_bot_rails'
 gem 'hirb'
 
 # Add foundation for quick css
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.4.5'
 gem 'autoprefixer-rails'
 
 # Simple Form for simple forms
@@ -38,9 +41,6 @@ gem 'simple_form'
 
 # Will Paginate for pagination
 gem 'will_paginate'
-
-#for heroku
-gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
