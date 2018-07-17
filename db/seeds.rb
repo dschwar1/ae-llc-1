@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#Job.create(name: "example job", address: "123 Example Ave.", client: "Charles Charleston", notes: "should be green friendly", job_number: 3456)
+#add the rest from factories.rb
