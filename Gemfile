@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "2.3.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
@@ -7,6 +8,7 @@ gem 'rails', '4.2.7.1'
 #gem 'sqlite3'
 #for heroku
 gem "pg", "~> 0.18"
+gem 'rails_12factor'
 # Use SCSS for stylesheets
 gem 'sass','~> 3.4.9'
 gem 'sass-rails', '~> 5.0.0'
