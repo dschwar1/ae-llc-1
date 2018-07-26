@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Work Day Scheduling</h1>
-
+<div id = "department_info">
+    <%= render "home/department_info" %>
+</div>
 <table>
     <thead>
         <tr>
@@ -23,3 +25,6 @@
     <%= render "home/week_links" %>
 </div>
 <%= link_to 'New Work Day Form', new_work_day_path %>
+<div id = "employee_info">
+    <%= render "home/employee_info" %>
+</div>

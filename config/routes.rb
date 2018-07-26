@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   #Scheduling page actions
   get 'week_before' => 'home#week_before', as: :week_before
   get 'week_after' => 'home#week_after', as: :week_after
+  get 'change_dep' => 'home#change_dep', as: :change_dep
+  get 'select_emp' => 'home#select_emp', as: :select_emp
+  get 'clear_emp' => 'home#clear_emp', as: :clear_emp
+  post 'add_workday' => 'home#add_workday', as: :add_workday
+  delete 'remove_workday' => 'home#remove_workday', as: :remove_workday
   
   #Root url
   root :to => 'home#home'

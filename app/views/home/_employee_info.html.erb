@@ -1,0 +1,21 @@
+Selected Employees: <%#= if @selected_emps.empty? then "No Employees Selected" else @selected_emps.each { |emp| emp.name + ',' } end %>
+<% if @selected_emps.empty? %>
+    <%= "No Employees Selected" %>
+<% else %>
+    <% @selected_emps.each do |emp| %>
+        <%= emp.name + ',' %>
+    <% end %>
+<% end %>
+<%= form_tag(clear_emp_path, :method => 'get', remote:true) do %>
+    <%submit_tag "Clear Selected Employees", :name => nil %>
+<% end %>
+<% if @employees.empty? %>
+    <br><%= 'No Employees available to select' %>
+<% else %>
+    <%= form_tag(select_emp_path, :method => 'get', remote: true) do %>
+      <p>
+        <%= select_tag "emp", options_from_collection_for_select(@employees, "id", "name"), placeholder: "Employee" %>
+        <%= submit_tag "Select Employee", :name => nil %>
+      </p>
+    <% end %>
+<% end %>
