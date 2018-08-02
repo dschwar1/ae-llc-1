@@ -1,6 +1,7 @@
 <!--<tbody>-->
     <% @scopes.each do |scope| %>
       <tr>
+        <td><%= scope.scope_number %></td>
         <td><%= scope.description %></td>
         <td><%= scope.extra %></td>
         <td><%= scope.estimated_hours %></td>
@@ -8,6 +9,7 @@
         <td><%= scope.value %></td>
         <td><%= scope.estimated_gc_due_date.to_date %></td>
         <td><%= scope.actual_gc_due_date.to_date %></td>
+        <td><%= scope.notes %></td>
         <td><%= scope.department.name %></td>
         <td><%= scope.job.name %></td>
         <td><%= link_to 'Show', scope %></td>

@@ -1,3 +1,17 @@
+<thead>
+    <tr>
+        <th>Job #</th>
+        <th>Job</th>
+        <th>Monday<br><%= @wbeg.strftime("%-m/%-d") %></th>
+        <th>Tuesday<br><%= (@wbeg + 1).strftime("%-m/%-d") %></th>
+        <th>Wednesday<br><%= (@wbeg + 2).strftime("%-m/%-d") %></th>
+        <th>Thursday<br><%= (@wbeg + 3).strftime("%-m/%-d") %></th>
+        <th>Friday<br><%= (@wbeg + 4).strftime("%-m/%-d") %></th>
+        <th>Saturday<br><%= (@wbeg + 5).strftime("%-m/%-d") %></th>
+        <th>Sunday<br><%= (@wbeg + 6).strftime("%-m/%-d") %></th>
+    </tr>
+</thead>
+<tbody></tbody>
 <% @jobs.each do |job| %>
     <tr>
         <%# job = @jobs.first %>
@@ -9,11 +23,11 @@
                 <%= submit_tag "Show Scopes", :name => nil %>
             <% end %>
         </td>
-        <% (0..5).each do |day| %>
+        <% (0..6).each do |day| %>
             <% this_day = WorkDay.for_day(@wbeg + day).for_job(job) %>
             <td>
             <% if this_day.empty? %>
-                <%= "Nobody worked this day" %>
+                <%= "N/A" %>
             <% else %>
                 <!--<td>-->
                 <% this_day.each do |wday| %>
@@ -33,3 +47,4 @@
         <% end %>
     </tr>
 <% end %>
+</tbody>

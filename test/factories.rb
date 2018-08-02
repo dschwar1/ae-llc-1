@@ -1,3 +1,5 @@
+#need to add notes and scope_number fields to Scope
+#has a lot of overlapping info with seeds.rb
 FactoryBot.define do
     
     factory :job do

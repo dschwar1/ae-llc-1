@@ -5,22 +5,26 @@
     <table>
         <thead>
             <tr>
-                <th>Scope Description</th>
+                <th>Scope #</th>
+                <th>Scope Desc.</th>
                 <th>Est. Hours Left</th>
                 <th>Hours Spent</th>
                 <th>Department</th>
                 <th>Est. GC Due Date</th>
                 <th>Actual GC Due Date</th>
+                <th>Notes</th>
             </tr>
         </thead>
         <% @job_scopes.each do |scope| %>
           <tr>    
+            <td><%= scope.scope_number %></td>
             <td><%= scope.description %></td>
             <td><%= scope.hours_left %></td>
             <td><%= scope.hours %></td>
             <td><%= scope.department.name %></td>
             <td><%= scope.estimated_gc_due_date.to_date %></td>
             <td><%= scope.actual_gc_due_date.to_date %></td>
+            <td><%= scope.notes %></td>
           </tr>
         <% end %>
     </table>

@@ -1,4 +1,9 @@
 <p>
+  <strong>Scope Number:</strong>
+  <%= @scope.scope_number %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @scope.description %>
 </p>
@@ -31,6 +36,11 @@
 <p>
   <strong>Actual gc due date:</strong>
   <%= @scope.actual_gc_due_date.to_date %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @scope.notes %>
 </p>
 
 <p>

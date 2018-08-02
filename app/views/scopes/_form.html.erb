@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :scope_number %><br>
+    <%= f.text_field :scope_number %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
@@ -38,6 +42,10 @@
   <div class="field">
     <%= f.label :actual_gc_due_date %><br>
     <%= f.date_select :actual_gc_due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
   </div>
   <div class="field">
     <%= f.label :department_id %><br>

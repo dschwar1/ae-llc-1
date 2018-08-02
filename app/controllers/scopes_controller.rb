@@ -72,6 +72,6 @@ class ScopesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scope_params
-      params.require(:scope).permit(:description, :extra, :estimated_hours, :hours, :value, :estimated_gc_due_date, :actual_gc_due_date, :job_id, :department_id)
+      params.require(:scope).permit(:description, :extra, :estimated_hours, :hours, :value, :estimated_gc_due_date, :actual_gc_due_date, :job_id, :department_id, :scope_number, :notes)
     end
 end
