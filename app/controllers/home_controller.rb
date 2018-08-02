@@ -6,6 +6,7 @@ class HomeController < ApplicationController
         session[:dep] = nil
         session[:emps] = []
         session[:wbeg] = Date.today - Date.today.wday + 1 #beginning of this week
+        session[:j_scopes] = nil
         scheduling_boiler_plate
     end
     
@@ -68,9 +69,11 @@ class HomeController < ApplicationController
         ajax_respond
     end
     
-    #TO DO first make basic employee selector (probably should be a session variable)
-    #keep track of job variable locally in view
-    #keep track of date variable locally in view and with wbeg session var
+    def get_job_scopes
+        session[:j_scopes] = Job.find(params[:job]).scopes
+        scheduling_boiler_plate
+        ajax_respond
+    end
     
     private
     def scheduling_boiler_plate
@@ -82,6 +85,7 @@ class HomeController < ApplicationController
         @wbeg = session[:wbeg].to_date
         @departments = Department.all
         @work_days = WorkDay.all
+        @job_scopes = session[:j_scopes]
         if session[:dep].nil?
             @jobs = Job.active_jobs
         else

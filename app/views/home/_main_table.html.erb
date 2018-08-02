@@ -2,7 +2,13 @@
     <tr>
         <%# job = @jobs.first %>
         <td><%= job.job_number %></td>
-        <td><%= job.name %></td>
+        <td>
+            <%= job.name %>
+            <%= form_tag(get_job_scopes_path, :method => 'get', remote:true) do %>
+                <%= hidden_field_tag 'job', job.id %>
+                <%= submit_tag "Show Scopes", :name => nil %>
+            <% end %>
+        </td>
         <% (0..5).each do |day| %>
             <% this_day = WorkDay.for_day(@wbeg + day).for_job(job) %>
             <td>

@@ -1,0 +1,27 @@
+<% if @job_scopes.nil? %>
+    <h3>Select Job to Display Scope Information</h3>
+<% else %>
+    <h3>Scopes for <%= @job_scopes.first.job.name %></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Scope Description</th>
+                <th>Est. Hours Left</th>
+                <th>Hours Spent</th>
+                <th>Department</th>
+                <th>Est. GC Due Date</th>
+                <th>Actual GC Due Date</th>
+            </tr>
+        </thead>
+        <% @job_scopes.each do |scope| %>
+          <tr>    
+            <td><%= scope.description %></td>
+            <td><%= scope.hours_left %></td>
+            <td><%= scope.hours %></td>
+            <td><%= scope.department.name %></td>
+            <td><%= scope.estimated_gc_due_date.to_date %></td>
+            <td><%= scope.actual_gc_due_date.to_date %></td>
+          </tr>
+        <% end %>
+    </table>
+<% end %>

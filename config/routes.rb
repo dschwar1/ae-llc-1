@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'clear_emp' => 'home#clear_emp', as: :clear_emp
   post 'add_workday' => 'home#add_workday', as: :add_workday
   delete 'remove_workday' => 'home#remove_workday', as: :remove_workday
+  get 'get_job_scopes' => 'home#get_job_scopes', as: :get_job_scopes
   
   #Root url
   root :to => 'home#home'
