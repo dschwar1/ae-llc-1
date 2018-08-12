@@ -48,6 +48,10 @@
     <%= f.text_field :notes %>
   </div>
   <div class="field">
+    <%= f.label :crew_size %><br>
+    <%= f.number_field :crew_size %>
+  </div>
+  <div class="field">
     <%= f.label :department_id %><br>
     <%= f.collection_select :department_id, Department.all, :id, :name, Prompt: "Select Department" %>
   </div>

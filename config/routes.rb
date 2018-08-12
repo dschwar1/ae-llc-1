@@ -9,6 +9,13 @@ Rails.application.routes.draw do
   #Static page routes
   get 'home' => 'home#home', as: :home
   get 'scheduling' => 'home#scheduling', as: :scheduling
+  get 'projection' => 'home#projection', as: :projection
+  get 'overview' => 'home#overview', as: :overview
+  
+  #Ajax
+  #Projection page actions
+  get 'reduce' => 'home#reduce', as: :reduce
+  get 'change_dep_proj' => 'home#change_dep_proj', as: :change_dep_proj
   
   #Scheduling page actions
   get 'week_before' => 'home#week_before', as: :week_before

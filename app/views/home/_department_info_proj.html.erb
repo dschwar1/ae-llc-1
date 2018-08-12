@@ -1,0 +1,7 @@
+Current Department: <%= if @curr_dep.nil? then "No Department Selected" else @curr_dep.name end %>
+<%= form_tag(change_dep_proj_path, :method => 'get', remote: true) do %>
+  <p>
+    <%= select_tag "dep", options_from_collection_for_select(@departments, "id", "name"), placeholder: "Department" %>
+    <%= submit_tag "Show Jobs", :name => nil %>
+  </p>
+<% end %>

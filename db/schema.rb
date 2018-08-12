@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20180605053219) do
     t.float    "value"
     t.datetime "estimated_gc_due_date"
     t.datetime "actual_gc_due_date"
+    t.integer  "crew_size"
     t.integer  "job_id"
     t.integer  "department_id"
     t.datetime "created_at",            null: false

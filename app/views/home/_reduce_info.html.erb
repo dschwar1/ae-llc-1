@@ -1,0 +1,7 @@
+Reduce By: <%= @reduce.to_s + "%" %>
+<%= form_tag(reduce_path, :method => 'get', remote: true) do %>
+  <p>
+    <%= number_field_tag "reduce" %>
+    <%= submit_tag "Reduce!", :name => nil %>
+  </p>
+<% end %>

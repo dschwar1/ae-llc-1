@@ -2,6 +2,32 @@ class HomeController < ApplicationController
     def home
     end
     
+    def overview
+    end
+    
+    def projection
+        session[:dep1] = nil
+        session[:reduce] = 10
+        projection_boiler_plate
+    end
+    
+    #Projection Page Actions
+    def reduce
+        reduce = params[:reduce].to_i
+        unless reduce.nil? || reduce < 0 || reduce > 100
+            session[:reduce] = params[:reduce].to_i
+        end
+        projection_boiler_plate
+        ajax_respond
+    end
+    
+    def change_dep_proj
+        session[:dep1] = params[:dep]
+        projection_boiler_plate
+        ajax_respond
+    end
+    
+    #rest is for scheduling page
     def scheduling
         session[:dep] = nil
         session[:emps] = []
@@ -94,9 +120,20 @@ class HomeController < ApplicationController
         end
     end
     
+    def projection_boiler_plate
+        @departments = Department.all
+        @reduce = session[:reduce]
+        if session[:dep1].nil?
+            @jobs = Job.incomplete_jobs
+        else
+            @jobs = Job.incomplete_jobs.for_department(session[:dep1])
+            @curr_dep = Department.find(session[:dep1])
+        end
+    end
+    
     def ajax_respond
         respond_to do |format|
-            format.html { redirect_to scheduling_path notice: "You should not see this message, contact admin if you do."}
+            format.html { redirect_to home_path notice: "You should not see this message, contact admin if you do."}
             format.js
         end
     end

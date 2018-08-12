@@ -10,7 +10,16 @@ class Job < ActiveRecord::Base
     #Methods
     def active?
         for scope in Scope.all.for_job(self.id).to_a do
-            if scope.actual_gc_due_date < 1.week.from_now.to_date and !scope.complete?
+            if scope.actual_gc_due_date < 2.weeks.from_now.to_date and !scope.complete?
+                return true
+            end
+        end
+        return false
+    end
+    
+    def incomplete?
+        for scope in Scope.all.for_job(self.id).to_a do
+            if !scope.complete?
                 return true
             end
         end
@@ -61,4 +70,15 @@ class Job < ActiveRecord::Base
         #return Job.where('id in jobs')
     end
     #Use both class methods for scheduling page(separated by department and only shows active jobs)
+    
+    def self.incomplete_jobs
+        jobs = []
+        for job in Job.all.each do
+            if job.incomplete?
+                jobs.append(job)
+            end
+        end
+        return Job.where(id: jobs.map(&:id))
+    end
+    
 end

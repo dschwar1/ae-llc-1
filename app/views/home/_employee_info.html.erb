@@ -19,3 +19,11 @@ Selected Employees: <%#= if @selected_emps.empty? then "No Employees Selected" e
       </p>
     <% end %>
 <% end %>
+<% @selected_emps.each do |emp| %>
+    <h3><%= emp.name %></h3>
+    <% phone = emp.phone %>
+    <b>Phone: </b><%= phone[0..2] + "-" + phone[3..5] + "-" + phone[6..-1] %>
+    <br><b>Employee Number: </b><%= emp.employee_number %>
+    <br><b>Department: </b><%= emp.department.name %>
+    <br>
+<% end %>

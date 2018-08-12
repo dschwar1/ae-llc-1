@@ -1,0 +1,29 @@
+<% @jobs.each do |job| %>
+    <h4><%= job.name %></h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Scopes</th>
+                <th>Hours</th>
+                <th>Reduce By</th>
+                <th>Hours Used</th>
+                <th>% Complete</th>
+                <th>Remaining Hours</th>
+                <th>Crew Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% job.scopes.each do |scope| %>
+            <tr>
+                <td><%= scope.description %></td>
+                <td><%= scope.estimated_hours %></td>
+                <td><%= scope.estimated_hours * (100 - @reduce)/100 %></td>
+                <td><%= scope.hours %></td>
+                <td><%= scope.completion_rate %></td>
+                <td><%= scope.estimated_hours * (100 - @reduce)/100 - scope.hours %></td>
+                <td><%= scope.crew_size %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>
