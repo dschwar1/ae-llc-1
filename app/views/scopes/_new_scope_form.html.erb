@@ -9,8 +9,8 @@
     <%= f.input :actual_gc_due_date, as: :date, required: false, label: "Actual GC Due Date", input_html: { :class => "avg"} %>
     <%= f.input :notes, label: "Notes", input_html: { :class => "avg"} %>
     <%= f.input :crew_size, label: "Crew Size", input_html: { :class => "avg"} %>
-    <%= f.input :department_id, collection: Department.all, label: "Department", input_html: { :class => "avg"} %>
-    <%= f.input :job_id, collection: Job.all, label: "Job", input_html: { :class => "avg"} %>
+    <%= f.input :department_id, collection: Department.all, label: "Department", :include_blank => true, input_html: { :class => "avg"} %>
+    <%= f.input :job_id, collection: Job.all, label: "Job", :include_blank => false, input_html: { :class => "avg"} %>
     <p>&nbsp</p>
     <div class="form_actions">
         <%= f.submit nil, class: 'button tiny radius' %>

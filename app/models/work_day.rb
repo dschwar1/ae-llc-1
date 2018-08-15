@@ -9,4 +9,8 @@ class WorkDay < ActiveRecord::Base
     scope :for_employee, -> (employee_id) { where("employee_id = ?", employee_id) }
     scope :for_day, -> (day) { where("day = ?", day.to_datetime) }#bugged not working, fix this
     
+    #Validations
+    validates_presence_of :day
+    validates :day, uniqueness: { scope: [:job_id, :employee_id] }
+    
 end

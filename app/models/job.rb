@@ -7,6 +7,10 @@ class Job < ActiveRecord::Base
     #Scopes
     #scope :active_jobs, -> { where("Job.active?") }
     
+    #Validations
+    validates_presence_of :name, :client
+    validates :job_number, presence: true, uniqueness: { case_sensitive: false }
+    
     #Methods
     def active?
         for scope in Scope.all.for_job(self.id).to_a do

@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :sessions
   resources :departments
   resources :scopes
   resources :employees
   resources :jobs
   resources :scope_times
   resources :work_days
+  
+  #Authentication routes
+  get 'login' => 'sessions#new', :as => :login
+  get 'logout' => 'sessions#destroy', :as => :logout
   
   #Static page routes
   get 'home' => 'home#home', as: :home

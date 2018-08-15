@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180605053219) do
+ActiveRecord::Schema.define(version: 20180814051459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20180605053219) do
     t.string   "name"
     t.string   "address"
     t.string   "client"
-    t.string   "notes"
-    t.integer  "job_number"
+    t.text     "notes"
+    t.string   "job_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,19 +52,31 @@ ActiveRecord::Schema.define(version: 20180605053219) do
 
   create_table "scopes", force: :cascade do |t|
     t.string   "scope_number"
-    t.string   "notes"
+    t.text     "notes"
     t.string   "description"
-    t.boolean  "extra"
+    t.boolean  "extra",                 default: false
     t.integer  "estimated_hours"
-    t.integer  "hours"
-    t.float    "value"
+    t.integer  "hours",                 default: 0
+    t.float    "value",                 default: 0.0
     t.datetime "estimated_gc_due_date"
     t.datetime "actual_gc_due_date"
     t.integer  "crew_size"
     t.integer  "job_id"
     t.integer  "department_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "role"
+    t.string   "phone"
+    t.boolean  "active",          default: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "work_days", force: :cascade do |t|

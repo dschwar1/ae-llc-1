@@ -1,6 +1,7 @@
 class ScopesController < ApplicationController
   before_action :set_scope, only: [:show, :edit, :update, :destroy]
-
+  authorize_resource
+  
   # GET /scopes
   # GET /scopes.json
   def index

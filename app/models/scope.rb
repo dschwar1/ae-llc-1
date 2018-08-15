@@ -7,6 +7,14 @@ class Scope < ActiveRecord::Base
     #Scopes
     scope :for_job, ->(job_id) { where("job_id = ?", job_id) }
     
+    #Validations
+    validates_presence_of :scope_number, :description, :estimated_gc_due_date #need to add uniqueness per job
+    validates_numericality_of :estimated_hours, greater_than_or_equal_to: 0
+    validates_numericality_of :hours, greater_than_or_equal_to: 0
+    validates_numericality_of :value, greater_than_or_equal_to: 0
+    validates_numericality_of :crew_size, greater_than_or_equal_to: 0, :allow_nil => true
+    
+    
     #Methods
     def completion_rate
         total = 0

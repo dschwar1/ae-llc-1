@@ -1,5 +1,6 @@
 class WorkDaysController < ApplicationController
     before_action :set_work_day, only: [:destroy]
+    authorize_resource
     
     def new
         @work_day = WorkDay.new

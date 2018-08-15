@@ -4,8 +4,8 @@ class CreateJobs < ActiveRecord::Migration
       t.string :name
       t.string :address
       t.string :client
-      t.string :notes
-      t.integer :job_number
+      t.text :notes
+      t.string :job_number
 
       t.timestamps null: false
     end

@@ -1,6 +1,15 @@
 #need to add notes and scope_number fields to Scope
 #has a lot of overlapping info with seeds.rb
 FactoryBot.define do
+  factory :user do
+    first_name "MyString"
+    last_name "MyString"
+    email "MyString"
+    password "MyString"
+    role "MyString"
+    phone "MyString"
+    active false
+  end
     
     factory :job do
         name "example job"

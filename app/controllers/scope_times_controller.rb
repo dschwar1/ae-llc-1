@@ -1,5 +1,6 @@
 class ScopeTimesController < ApplicationController
     before_action :set_scope_time, only: [:destroy]
+    authorize_resource
     
     def index
         @scope_times = ScopeTime.all
@@ -11,12 +12,11 @@ class ScopeTimesController < ApplicationController
     
     def create
         @scope_time = ScopeTime.new(scope_time_params)
-        
+        @scope_times = ScopeTime.all
         respond_to do |format|
             if @scope_time.save
                 format.html { redirect_to scopes_path(@scope_time.scope), notice: 'Scope time was successfully created.' }
                 @scope = @scope_time.scope
-                @scope_times = ScopeTime.all
                 format.js
             else
                 format.html { redirect_to scopes_path(@scope_time.scope), notice: 'Scope time was not created, error occurred.' }

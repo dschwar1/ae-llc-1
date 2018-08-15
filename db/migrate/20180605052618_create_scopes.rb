@@ -2,12 +2,12 @@ class CreateScopes < ActiveRecord::Migration
   def change
     create_table :scopes do |t|
       t.string :scope_number
-      t.string :notes
+      t.text :notes
       t.string :description
-      t.boolean :extra
+      t.boolean :extra, default: false
       t.integer :estimated_hours
-      t.integer :hours
-      t.float :value
+      t.integer :hours, default: 0
+      t.float :value, default: 0
       t.datetime :estimated_gc_due_date
       t.datetime :actual_gc_due_date
       t.integer :crew_size

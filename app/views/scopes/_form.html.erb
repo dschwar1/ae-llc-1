@@ -53,11 +53,11 @@
   </div>
   <div class="field">
     <%= f.label :department_id %><br>
-    <%= f.collection_select :department_id, Department.all, :id, :name, Prompt: "Select Department" %>
+    <%= f.collection_select :department_id, Department.all, :id, :name, Prompt: "Select Department", :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :job_id %><br>
-    <%= f.collection_select :job_id, Job.all, :id, :name, Prompt: "Select Job" %>
+    <%= f.collection_select :job_id, Job.all, :id, :name, Prompt: "Select Job", :include_blank => false %>
   </div>
   <div class="actions">
     <%= f.submit %>
