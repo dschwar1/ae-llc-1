@@ -12,7 +12,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body> 
+  <body data-turbolinks='false'> 
     <%= render :partial => "partials/nav" %>
     <div class="row">
       <% flash.each do |name, msg| %>
