@@ -11,7 +11,11 @@
         <td><%= scope.actual_gc_due_date.to_date %></td>
         <td><%= scope.notes %></td>
         <td><%= scope.crew_size %></td>
-        <td><%= scope.department.name %></td>
+        <% unless scope.department.nil? %>
+          <td><%= scope.department.name %></td>
+        <% else %>
+          <td><%= "N/A" %></td>
+        <% end %>
         <td><%= scope.job.name %></td>
         <td><%= link_to 'Show', scope %></td>
         <td><%= link_to 'Edit', edit_scope_path(scope) %></td>
