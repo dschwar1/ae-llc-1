@@ -51,7 +51,9 @@ ActiveRecord::Schema.define(version: 20180814051459) do
   end
 
   create_table "scopes", force: :cascade do |t|
-    t.string   "scope_number"
+    t.string   "phase"
+    t.string   "cost"
+    t.string   "cost_type"
     t.text     "notes"
     t.string   "description"
     t.boolean  "extra",                 default: false

@@ -6,6 +6,7 @@ class ScopesController < ApplicationController
   # GET /scopes.json
   def index
     @scopes = Scope.all
+    @jobs = Job.all
   end
 
   # GET /scopes/1
@@ -73,6 +74,6 @@ class ScopesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scope_params
-      params.require(:scope).permit(:description, :extra, :estimated_hours, :hours, :value, :estimated_gc_due_date, :actual_gc_due_date, :job_id, :department_id, :scope_number, :notes, :crew_size)
+      params.require(:scope).permit(:description, :extra, :estimated_hours, :hours, :value, :estimated_gc_due_date, :actual_gc_due_date, :job_id, :department_id, :phase, :cost, :cost_type, :notes, :crew_size)
     end
 end
