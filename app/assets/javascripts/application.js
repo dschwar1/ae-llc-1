@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery-ui/widgets/datepicker
 //= require foundation
-// require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$(function(){ $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });} );

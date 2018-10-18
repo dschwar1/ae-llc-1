@@ -1,0 +1,47 @@
+<%= form_tag(clear_path, :method => 'get', remote: true) do %>
+<p>
+    Applied Filters:
+    <% if session[:job_number] %>
+        <br>
+        Job Number: <%= session[:job_number] %>
+        <%= submit_tag "Clear Job Number" %>
+    <% end %>
+    <% if session[:phase] %>
+        <br>
+        Phase: <%= session[:phase] %>
+        <%= submit_tag "Clear Phase" %>
+    <% end %>
+    <% if session[:cost] %>
+        <br>
+        Cost: <%= session[:cost] %>
+        <%= submit_tag "Clear Cost" %>
+    <% end %>
+    <% if session[:job_name] %>
+        <br>
+        Job Name: <%= session[:job_name] %>
+        <%= submit_tag "Clear Job Name" %>
+    <% end %>
+    <% if session[:date_filter] %>
+        <br>
+        Start Date: <%= session[:scope_start_date] %>
+        End Date: <%= session[:scope_end_date] %>
+        <%= submit_tag "Clear Date Filter" %>
+    <% end %>
+    <% if session[:passed_filter] %>
+        <br>
+        Filtering by passed Actual GC Due Dates
+        <%= submit_tag "Clear passed due dates filter" %>
+    <% end %>
+    <% if session[:incomplete_filter] %>
+        <br>
+        Filtering by Incomplete Scopes
+        <%= submit_tag "Clear incomplete scopes filter" %>
+    <% end %>
+    <% if session[:missing_filter] %>
+        <br>
+        Filtering by Scopes missing Actual GC Due Dates
+        <%= submit_tag "Clear missing due dates filter" %>
+    <% end %>
+</p>
+<% end %>
+<%= button_to "Clear All", scopes_path, :method => :get %>

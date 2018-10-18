@@ -1,19 +1,57 @@
-<!--<tbody>-->
-    <% @job.scopes.each do |scope| %>
+<% @jobs.each do |job| %>
+<h4><%= job.job_number + " - " + job.name %></h4>
+<table>
+  <thead>
+    <tr>
+      <!--<th>Scope Number</th>-->
+      <th>Phase</th>
+      <th>Cost</th>
+      <th>Cost Type</th>
+      <th>Description</th>
+      <th>Completion %</th>
+      <th>Extra</th>
+      <th>Estimated hours</th>
+      <th>Hours Used</th>
+      <th>Value</th>
+      <th>Estimated gc due date</th>
+      <th>Actual gc due date</th>
+      <th>Notes</th>
+      <th>Crew Size</th>
+      <th>Department</th>
+      <!--<th>Job</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @scopes.each do |scope| %>
+    <% if scope.job_id == job.id %>
       <tr>
         <!--<td><%#= scope.scope_number %></td>-->
         <td><%= scope.phase %></td>
         <td><%= scope.cost %></td>
         <td><%= scope.cost_type %></td>
         <td><%= scope.description %></td>
+        <td><%= scope.completion_rate %></td>
         <td><%= scope.extra %></td>
         <td><%= scope.estimated_hours %></td>
         <td><%= scope.hours %></td>
         <td><%= scope.value %></td>
         <td><%= scope.estimated_gc_due_date.to_date %></td>
-        <td><%= scope.actual_gc_due_date.to_date %></td>
-        <td><%= scope.notes %></td>
-        <td><%= scope.crew_size %></td>
+        <% if scope.actual_gc_due_date %>
+          <td><%= scope.actual_gc_due_date.to_date %></td>
+        <% else %>
+          <td>N/A</td>
+        <% end %>
+        <% if scope.notes %>
+          <td><%= scope.notes %></td>
+        <% else %>
+          <td>N/A</td>
+        <% end %>
+        <% if scope.crew_size %>
+          <td><%= scope.crew_size %></td>
+        <% else %>
+          <td>N/A</td>
+        <% end %>
         <td><%= scope.department.name %></td>
         <!--<td><%#= scope.job.name %></td>-->
         <td><%= link_to 'Show', scope %></td>
@@ -21,4 +59,7 @@
         <td><%= link_to 'Destroy', scope, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-<!--</tbody>-->
+    <% end %>
+  </tbody>
+</table>
+<% end %>
