@@ -7,12 +7,12 @@
     <title>AE LLC Scheduling</title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "vendor/modernizr", "data-turbolinks-track" => false %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
     <%= csrf_meta_tags %>
   </head>
 
-  <body> 
+  <body data-turbolinks='false'> 
     <%= render :partial => "partials/nav" %>
     <div class="row">
       <% flash.each do |name, msg| %>
