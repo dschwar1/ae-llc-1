@@ -30,6 +30,15 @@
 </p>
 <% end %>
 
+<%= form_tag(sort_path, :method => 'get', remote: true) do %>
+<p>
+    Sort by:
+      <%= submit_tag "Actual GC Due Date Chronological" %>
+      <%= submit_tag "Estimated GC Due Date Chronological" %>
+      <%= submit_tag "Sort by Phase and Cost" %>
+</p>
+<% end %>
+
 <div id = "clear_info">
   <%= render "scopes/clear_info" %>
 </div>

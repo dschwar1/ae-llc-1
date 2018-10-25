@@ -42,6 +42,21 @@
         Filtering by Scopes missing Actual GC Due Dates
         <%= submit_tag "Clear missing due dates filter" %>
     <% end %>
+    <% if session[:estimated_chronological] %>
+        <br>
+        Sorting by Estimated GC Due Dates
+        <%= submit_tag "Clear Estimated Chronological Sort" %>
+    <% end %>
+    <% if session[:actual_chronological] %>
+        <br>
+        Sorting by Actual GC Due Dates
+        <%= submit_tag "Clear Actual Chronological Sort" %>
+    <% end %>
+    <% if session[:scope_sort] %>
+        <br>
+        Sorting by Phase then Cost
+        <%= submit_tag "Clear Scope Number Sort" %>
+    <% end %>
 </p>
 <% end %>
 <%= button_to "Clear All", scopes_path, :method => :get %>

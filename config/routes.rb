@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get 'search' => 'scopes#search', as: :search
   get 'filter_date' => 'scopes#filter_date', as: :filter_date
   get 'filter_misc' => 'scopes#filter_misc', as: :filter_misc
+  get 'sort' => 'scopes#sort', as: :sort
   get 'clear' => 'scopes#clear', as: :clear
   
   #Root url

@@ -19,6 +19,9 @@ class ScopesController < ApplicationController
     session[:passed_filter] = nil
     session[:incomplete_filter] = nil
     session[:missing_filter] = nil
+    session[:estimated_chronological] = nil
+    session[:actual_chronological] = nil
+    session[:scope_sort] = nil
   end
   
   def filter_date
@@ -49,6 +52,24 @@ class ScopesController < ApplicationController
       session[:cost] = params[:input]
     elsif params[:search_action] == 'Job Name'
       session[:job_name] = params[:input]
+    end
+    index_boiler_plate
+    ajax_respond
+  end
+  
+  def sort
+    if params[:commit] == 'Actual GC Due Date Chronological'
+      session[:actual_chronological] = true
+      session[:estimated_chronological] = false
+      session[:scope_sort] = false
+    elsif params[:commit] == 'Estimated GC Due Date Chronological'
+      session[:actual_chronological] = false
+      session[:estimated_chronological] = true
+      session[:scope_sort] = false
+    elsif params[:commit] == 'Sort by Phase and Cost'
+      session[:actual_chronological] = false
+      session[:estimated_chronological] = false
+      session[:scope_sort] = true
     end
     index_boiler_plate
     ajax_respond
@@ -85,6 +106,12 @@ class ScopesController < ApplicationController
       session[:incomplete_filter] = nil
     elsif params[:commit] == 'Clear missing due dates filter'
       session[:missing_filter] = nil
+    elsif params[:commit] == 'Clear Estimated Chronological Sort'
+      session[:estimated_chronological] = nil
+    elsif params[:commit] == 'Clear Actual Chronological Sort'
+      session[:actual_chronological] = nil
+    elsif params[:commit] == 'Clear Scope Number Sort'
+      session[:scope_sort] = nil
     end
     
     index_boiler_plate
@@ -194,6 +221,13 @@ class ScopesController < ApplicationController
       if session[:missing_filter]
         @jobs = @jobs.scope_actual_date_nil
         @scopes = @scopes.actual_date_nil
+      end
+      if session[:actual_chronological]
+        @scopes = @scopes.estimated_chronological
+      elsif session[:estimated_chronological]
+        @scopes = @scopes.actual_chronological
+      elsif session[:scope_sort]
+        @scopes = @scopes.sort_by_scope_number
       end
     end
     
