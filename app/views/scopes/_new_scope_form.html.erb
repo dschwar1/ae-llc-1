@@ -1,5 +1,8 @@
 <%= simple_form_for @scope, html: { :class => 'form-horizontal' }, remote: true do |f| %>
-    <%= f.input :scope_number, label: "Scope Number", input_html: { :class => "avg"} %>
+    <%#= f.input :scope_number, label: "Scope Number", input_html: { :class => "avg"} %>
+    <%= f.input :phase, label: "Phase", input_html: { :class => "avg"} %>
+    <%= f.input :cost, label: "Cost", input_html: { :class => "avg"} %>
+    <%= f.input :cost_type, label: "Cost Type", input_html: { :class => "avg"} %>
     <%= f.input :description, label: "Description", input_html: { :class => "avg"} %>
     <%= f.input :extra, label: "Extra", input_html: { :class => "avg"} %>
     <%= f.input :estimated_hours, label: "Estimated Hours", input_html: { :class => "avg"} %>

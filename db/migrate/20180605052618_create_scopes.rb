@@ -1,7 +1,10 @@
 class CreateScopes < ActiveRecord::Migration
   def change
     create_table :scopes do |t|
-      t.string :scope_number
+      #t.string :scope_number
+      t.string :phase
+      t.string :cost
+      t.string :cost_type
       t.text :notes
       t.string :description
       t.boolean :extra, default: false

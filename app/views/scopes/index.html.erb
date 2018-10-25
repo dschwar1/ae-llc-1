@@ -1,35 +1,56 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Listing Scopes</h1>
+<%= form_tag(search_path, :method => 'get', remote: true) do %>
+<p>
+  Search for:
+  <%= select_tag "search_action", "<option>Job Number</option><option>Job Name</option><option>Phase</option><option>Cost</option>".html_safe %>
+  <%= text_field_tag 'input', nil, placeholder: 'Enter search term...' %>
+  <%= submit_tag "Search!", :name => nil %>
+</p>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Scope Number</th>
-      <th>Description</th>
-      <th>Extra</th>
-      <th>Estimated hours</th>
-      <th>Actual hours</th>
-      <th>Value</th>
-      <th>Estimated gc due date</th>
-      <th>Actual gc due date</th>
-      <th>Notes</th>
-      <th>Crew Size</th>
-      <th>Department</th>
-      <th>Job</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody id="scopes_list">
-    <%= render "scopes/scopes_list" %>
-  </tbody>
-</table>
+<%= form_tag(filter_date_path, :method => 'get', remote: true) do %>
+<p>
+  Filter Dates for:
+  <%= select_tag "date_type", "<option>Estimated</option><option>Actual</option>".html_safe %>
+  Start Date:
+  <%= text_field_tag "start_date", nil, class: "datepicker" %>
+  End Date:
+  <%= text_field_tag "end_date", nil, class: "datepicker" %>
+  <%= submit_tag "Filter Dates!", :name => nil %>
+</p>
+<% end %>
+
+<%= form_tag(filter_misc_path, :method => 'get', remote: true) do %>
+<p>
+    Miscellaneous Filters:
+      <%= submit_tag "Actual GC Due Date Passed" %>
+      <%= submit_tag "Show Only Incomplete Scopes" %>
+      <%= submit_tag "Show Scopes Missing Actual Due Dates" %>
+</p>
+<% end %>
+
+<%= form_tag(sort_path, :method => 'get', remote: true) do %>
+<p>
+    Sort by:
+      <%= submit_tag "Actual GC Due Date Chronological" %>
+      <%= submit_tag "Estimated GC Due Date Chronological" %>
+      <%= submit_tag "Sort by Phase and Cost" %>
+</p>
+<% end %>
+
+<div id = "clear_info">
+  <%= render "scopes/clear_info" %>
+</div>
+<div id = "scopes_list">
+  <%= render "scopes/scopes_list" %>
+</div>
 
 <br>
 
-<div id="new_scope_link">
-  <%= render 'new_scope_link'%>
-</div>
+<!--div id="new_scope_link">
+  <%#= render 'new_scope_link'%>
+</div>-->
 
 <%# link_to(new_scope_path, id: 'new_scope_link', class: 'button tiny radius', remote: true) do %>
   <!--Add New Scope Now-->

@@ -5,7 +5,10 @@
     <table>
         <thead>
             <tr>
-                <th>Scope #</th>
+                <!--<th>Scope #</th>-->
+                <th>Phase</th>
+                <th>Cost</th>
+                <th>Cost Type</th>
                 <th>Scope Desc.</th>
                 <th>Est. Hours Left</th>
                 <th>Hours Spent</th>
@@ -17,7 +20,10 @@
         </thead>
         <% @job_scopes.each do |scope| %>
           <tr>    
-            <td><%= scope.scope_number %></td>
+            <!--<td><%#= scope.scope_number %></td>-->
+            <td><%= scope.phase %></td>
+            <td><%= scope.cost %></td>
+            <td><%= scope.cost_type %></td>
             <td><%= scope.description %></td>
             <td><%= scope.hours_left %></td>
             <td><%= scope.hours %></td>

@@ -41,6 +41,10 @@ gem 'autoprefixer-rails'
 # Simple Form for simple forms
 gem 'simple_form'
 
+# For inputting dates
+#gem 'bootstrap-datepicker-rails'
+gem 'jquery-ui-rails'
+
 # Will Paginate for pagination
 gem 'will_paginate'
 

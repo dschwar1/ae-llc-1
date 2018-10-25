@@ -33,6 +33,13 @@ Rails.application.routes.draw do
   delete 'remove_workday' => 'home#remove_workday', as: :remove_workday
   get 'get_job_scopes' => 'home#get_job_scopes', as: :get_job_scopes
   
+  #Scopes Index page actions
+  get 'search' => 'scopes#search', as: :search
+  get 'filter_date' => 'scopes#filter_date', as: :filter_date
+  get 'filter_misc' => 'scopes#filter_misc', as: :filter_misc
+  get 'sort' => 'scopes#sort', as: :sort
+  get 'clear' => 'scopes#clear', as: :clear
+  
   #Root url
   root :to => 'home#home'
   

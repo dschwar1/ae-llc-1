@@ -6,6 +6,14 @@ class Job < ActiveRecord::Base
     
     #Scopes
     #scope :active_jobs, -> { where("Job.active?") }
+    scope :for_scope_phase, ->(phase) { joins(:scopes).where('scopes.phase = ?', phase).distinct }
+    scope :for_scope_cost, ->(cost) { joins(:scopes).where('scopes.cost = ?', cost).distinct }
+    scope :for_job_number, ->(job_num) { where("job_number = ?", job_num) }
+    scope :for_job_name, ->(name) { where('lower(name) LIKE ?', "#{name.downcase}%") }
+    scope :between_scope_estimated_dates, ->(start_date, end_date) { joins(:scopes).where('? < scopes.estimated_gc_due_date AND ? > scopes.estimated_gc_due_date', start_date, end_date).distinct }
+    scope :between_scope_actual_dates, ->(start_date, end_date) { joins(:scopes).where('? < scopes.actual_gc_due_date AND ? > scopes.actual_gc_due_date', start_date, end_date).distinct }
+    scope :scope_actual_date_passed, -> { joins(:scopes).where("scopes.actual_gc_due_date < ?", Date.today).distinct }
+    scope :scope_actual_date_nil, -> { joins(:scopes).where("scopes.actual_gc_due_date is NULL").distinct }
     
     #Validations
     validates_presence_of :name, :client
