@@ -19,3 +19,8 @@
 
 $(function(){ $(document).foundation(); });
 $(function(){ $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });} );
+$( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  } );

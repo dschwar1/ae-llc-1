@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing Scopes</h1>
+<div id="accordion"><h3>Filters and Sorting Options</h3><div>
 <%= form_tag(search_path, :method => 'get', remote: true) do %>
 <p>
   Search for:
@@ -42,6 +43,7 @@
 <div id = "clear_info">
   <%= render "scopes/clear_info" %>
 </div>
+</div></div>
 <div id = "scopes_list">
   <%= render "scopes/scopes_list" %>
 </div>
