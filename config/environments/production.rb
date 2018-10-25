@@ -79,5 +79,5 @@ Rails.application.configure do
   
   #this might fix heroku?
   config.serve_static_assets = true
-  config.public_file_server.enabled = true
+  
 end
