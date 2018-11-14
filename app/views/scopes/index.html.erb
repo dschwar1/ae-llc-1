@@ -44,6 +44,8 @@
   <%= render "scopes/clear_info" %>
 </div>
 </div></div>
+<br>
+<%= link_to 'New Scope Form', new_scope_path, class: 'button tiny radius' %>
 <div id = "scopes_list">
   <%= render "scopes/scopes_list" %>
 </div>
@@ -60,6 +62,6 @@
 
 <br>
 
-<%= link_to 'New Scope Form', new_scope_path %>
+<%= link_to 'New Scope Form', new_scope_path, class: 'button tiny radius' %>
 
 <br>
