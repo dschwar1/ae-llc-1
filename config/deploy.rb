@@ -1,8 +1,9 @@
 require 'bundler/capistrano'
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+#lock "~> 2.15.5"
 
-server 'dylanschwartz.com', :web, :app, :db, primary: true
+#server 'dylanschwartz.com', :web, :app, :db, primary: true
+server '159.89.146.235', :web, :app, :db, primary: true
 
 set :application, "ae_llc_scheduling"
 set :user, 'dylan'
@@ -27,7 +28,7 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 #keep only the last 5 releases
-after 'deploy', 'dploy:cleanup'
+after 'deploy', 'deploy:cleanup'
 after 'deploy:restart', 'deploy:cleanup'
 
 namespace :deploy do

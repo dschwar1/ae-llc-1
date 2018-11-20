@@ -61,7 +61,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   #Cap for deployment
-  gem "capistrano", "~> 3.10"
+  gem "capistrano", "~> 2.15.5"
 end
 
 group :development do
